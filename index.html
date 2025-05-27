@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>90-Day Daily Reminder</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#005f73" />
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(reg => console.log('Service Worker Registered:', reg))
+          .catch(err => console.error('Service Worker Failed:', err));
+      });
+    }
+  </script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      color: #222;
+      padding: 16px;
+      line-height: 1.6;
+    }
+    h1, h2 { text-align: center; margin-bottom: 16px; }
+    .phase {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      padding: 16px;
+      margin: 20px 0;
+    }
+    .phase-title {
+      font-size: 1.25em;
+      font-weight: bold;
+      color: #005f73;
+      margin-bottom: 10px;
+    }
+    ul { padding-left: 18px; }
+    li { margin-bottom: 8px; }
+    .reminder {
+      background: #e0f2f1;
+      border-left: 6px solid #00796b;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 10px;
+      font-style: italic;
+    }
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .phase { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Mohamed Wanko's 90-Day Daily Reminder</h1>
+  <h2>Reset. Rebuild. Reclaim.</h2>
+
+  <div class="phase">
+    <div class="phase-title">Phase 1: RESET (Days 1–30)</div>
+    <ul>
+      <li><strong>Daily:</strong> 5-min silence, 10-min journaling, 10-min reading, 5-min intention</li>
+      <li><strong>Remove:</strong> Gossip, distractions, draining talk, guilt cycles</li>
+      <li><strong>Weekly Check-In:</strong> What gave me life? What drained me?</li>
+    </ul>
+    <div class="reminder">"Peace begins when you stop arguing with your soul."</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-title">Phase 2: REBUILD (Days 31–60)</div>
+    <ul>
+      <li><strong>Daily Identity:</strong> Declare: "I am the kind of man who ___."</li>
+      <li><strong>Creative Action:</strong> One small bold step, daily</li>
+      <li><strong>Passion Practice:</strong> 30 minutes creating daily</li>
+    </ul>
+    <div class="reminder">"You don't find purpose. You build it by showing up with truth."</div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-title">Phase 3: RECLAIM (Days 61–90)</div>
+    <ul>
+      <li><strong>Set & Speak Boundaries:</strong> Write 5, speak daily</li>
+      <li><strong>Step into Mentorship:</strong> Share 1 truth weekly</li>
+      <li><strong>Truth Reflection:</strong> Where was I true? Where did I shrink?</li>
+    </ul>
+    <div class="reminder">"You don’t have to be loud to be powerful. Protect your peace with quiet fire."</div>
+  </div>
+</body>
+</html>
